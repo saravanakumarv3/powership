@@ -66,10 +66,10 @@ node {
 				]
 			]
 		])
-		def newComponentVersionId = "${JpetComponent_VersionId}"
+		def newComponentVersionId = "<COMPONENT_VERSIONID>"
 		step(
 			$class: 'UploadBuild',
-			tenantId: "<UCD_TENANTID>",
+			tenantId: "<UCV_TENANTID>",
 			revision: "${GIT_COMMIT}",
 			appName: "<APPLICATION_NAME>", requestor: "admin", id: "${newComponentVersionId}"
 		)
@@ -81,7 +81,7 @@ node {
 				deployDesc: 'Requested from Jenkins',
 				deployEnv: '<PROJECT_DEPLOYMENT_ENVIRONMENT>',
 				deployOnlyChanged: false,
-				deployProc: 'Deploy-<PROJECT_NAME>',
+				deployProc: '<UCD-APPLICATION-PROCESS_NAME>',
 				deployReqProps: '',
 				deployVersions: "<COMPONENT_NAME>:1.${BUILD_NUMBER}"],
 			siteName: '<UCD_SERVER_NAME>']
